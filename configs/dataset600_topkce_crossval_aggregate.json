@@ -1,0 +1,15 @@
+{
+  "protocol": "five-fold out-of-fold cross-validation",
+  "case_count": 1200,
+  "foreground_mean": {
+    "Dice": 0.8012963849934753,
+    "IoU": 0.703765062465001,
+    "FN": 6763.591666666666,
+    "FP": 4409.1675,
+    "TN": 6826446.576666667,
+    "TP": 23055.9475,
+    "n_pred": 27465.115,
+    "n_ref": 29819.539166666666
+  },
+  "source": "Recovered nnU-Net summary.json; patient-level entries and host paths intentionally omitted"
+}

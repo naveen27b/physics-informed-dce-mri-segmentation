@@ -1,0 +1,14 @@
+{
+    "channel_names": {
+        "0": "Anatomy_Harmonized",
+        "1": "Rel_Enhancement",
+        "2": "Subtraction_Post1_Pre",
+        "3": "Washout_Slope_Pos"
+    },
+    "labels": {
+        "background": 0,
+        "tumor": 1
+    },
+    "numTraining": 1200,
+    "file_ending": ".nii.gz"
+}

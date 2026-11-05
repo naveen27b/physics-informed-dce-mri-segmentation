@@ -1,0 +1,45 @@
+# Medical imaging and patient-level material
+*.dcm
+*.nii
+*.nii.gz
+*.nrrd
+*.mha
+*.mhd
+patient_info_files/
+clinical*/
+metadata*/
+imagesTr/
+imagesTs/
+labelsTr/
+labelsTs/
+predictions/
+inference_predictions/
+
+# Model artifacts
+*.pth
+*.pt
+*.ckpt
+*.model
+nnUNet_raw/
+nnUNet_preprocessed/
+nnUNet_results/
+
+# Local outputs and caches
+outputs/
+logs/
+*.log
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
