@@ -15,14 +15,20 @@ Research on multi-phase breast DCE-MRI tumor segmentation, preprocessing robustn
 
 ## Input channels
 
-1. pre-contrast anatomy after pre-derived percentile scaling;
-2. relative enhancement `(post1 - pre) / max(pre, 0.01)`;
-3. positive subtraction `post1 - pre`;
-4. positive washout slope `(temporal_peak - last_phase) / elapsed_phase_steps`.
+1. Pre-contrast anatomy after percentile scaling based on the pre-contrast image.
+2. Relative enhancement.
+3. Positive post-contrast subtraction.
+4. Positive washout slope.
 
 ## Training data
 
-The recovered experiment used 1,200 MAMA-MIA training cases across DUKE, I-SPY1, I-SPY2, and NACT. Dataset access and redistribution are governed by the original providers; this repository contains no source images or labels.
+The recovered experiment used 1,200 MAMA-MIA training cases across DUKE, I-SPY1, I-SPY2, and NACT. MAMA-MIA is a multi-institutional dataset; this repository contains no source images or labels.
+
+- Project and challenge information: [MAMA-MIA website](https://www.ub.edu/mama-mia/).
+- Dataset access: follow the [official MAMA-MIA download instructions](https://github.com/LidiaGarrucho/MAMA-MIA#downloading-the-dataset) for Synapse and XNAT access. The dataset is hosted on [Synapse (syn60868042)](https://www.synapse.org/Synapse:syn60868042).
+- Dataset citation: Garrucho et al., [MAMA-MIA: A large-scale breast cancer MRI dataset](https://doi.org/10.1038/s41597-025-04707-4), *Scientific Data* (2025).
+
+Please credit the MAMA-MIA dataset and its publication when using these results. Dataset access, permitted use, and redistribution are governed by the dataset providers and source collections; review their current terms and citation requirements before reuse. This repository does not redistribute the data.
 
 ## Checkpoint status
 

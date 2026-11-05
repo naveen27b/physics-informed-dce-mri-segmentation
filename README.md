@@ -85,7 +85,11 @@ python scripts/data/create_dataset_600.py \
   --nnunet-raw /path/to/nnUNet_raw
 ```
 
-The input data are not redistributed. Obtain MAMA-MIA through its official access route and comply with its terms.
+### Data access and attribution
+
+This project used MAMA-MIA. See the [MAMA-MIA project and challenge website](https://www.ub.edu/mama-mia/) and the [official dataset download instructions](https://github.com/LidiaGarrucho/MAMA-MIA#downloading-the-dataset) for access through Synapse or XNAT. The dataset is hosted on [Synapse (syn60868042)](https://www.synapse.org/Synapse:syn60868042).
+
+Please cite Garrucho et al., [MAMA-MIA: A large-scale breast cancer MRI dataset](https://doi.org/10.1038/s41597-025-04707-4), *Scientific Data* (2025), and credit the MAMA-MIA dataset when using this work. Data access, permitted use, and redistribution follow the providers' terms and source-collection requirements. This repository contains no source images or labels and does not redistribute the dataset.
 
 ## Inference
 
