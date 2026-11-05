@@ -1,12 +1,10 @@
 # Physics-Informed DCE-MRI Breast Tumor Segmentation
 
-A portfolio-ready implementation of contrast-kinetics-informed 3D breast tumor segmentation using nnU-Net v2. The project converts registered dynamic contrast-enhanced MRI into four physically interpretable channels and trains a residual-encoder 3D nnU-Net across the multi-center MAMA-MIA benchmark.
+This repository contains code for 3D breast tumor segmentation from registered dynamic contrast-enhanced MRI (DCE-MRI). It constructs four input channels—pre-contrast anatomy, relative enhancement, post-contrast subtraction, and washout slope—and uses them to train a residual-encoder nnU-Net v2 on the multi-center MAMA-MIA dataset.
 
 > Research code only. This repository is not a medical device and must not be used for clinical decision-making.
 
-## Why this project matters
-
-Normalizing every DCE phase independently removes the intensity differences that encode contrast uptake and washout. Dataset600 fixes that failure mode by estimating percentile bounds from the pre-contrast image once and applying the same transform to every post-contrast phase.
+For feature construction, the code estimates percentile bounds from the pre-contrast image and applies the same scaling to the post-contrast phases. This keeps the phase scaling consistent when calculating enhancement channels.
 
 ```mermaid
 flowchart LR
@@ -26,20 +24,20 @@ flowchart LR
 
 This is a single-slice illustration from MAMA-MIA case DUKE_019 (slice 84), using the original first post-contrast phase and the recovered `ds600` ensemble prediction. The image component comes from the MAMA-MIA dataset, distributed under CC BY-NC 4.0 at the level of its most restrictive source collection. Cite [Garrucho et al. (MAMA-MIA)](https://doi.org/10.1038/s41597-025-04707-4) and [Saha et al. (Duke-Breast-Cancer-MRI)](https://doi.org/10.7937/TCIA.e3sv-re93). The red region is the model prediction, not the expert reference annotation.
 
-## Evidence-backed results
+## Reported results
 
-The repository deliberately separates evaluation protocols. Metrics from different cohorts or model variants are not presented as directly interchangeable.
+Results are grouped by evaluation protocol. Values from different cohorts and model variants should not be compared directly.
 
 | Evaluation | Model/configuration | Cases | Dice | Notes |
 |---|---|---:|---:|---|
 | Internal 5-fold CV | Dataset600 TopKCE, ResEncM, 3D full resolution | 1,200 | **0.8013** | Out-of-fold aggregate from nnU-Net `summary.json` |
 | Internal 5-fold CV | Dataset600 standard Dice+CE, 1,000 epochs | 1,200 | 0.7940 | Mean across five validation folds |
-| Held-out MAMA-MIA challenge cohort | 3-fold probability ensemble | 306 | **0.7801** | Best recorded mean Dice among the audited challenge configurations before proximity PP |
-| Held-out MAMA-MIA challenge cohort | 3-fold ensemble + proximity PP | 306 | **0.7810** | Highest recorded Dice; configuration selection means this is not an untouched final validation estimate |
+| Held-out MAMA-MIA challenge cohort | 3-fold probability ensemble | 306 | **0.7801** | Recorded mean Dice before proximity post-processing |
+| Held-out MAMA-MIA challenge cohort | 3-fold ensemble + proximity PP | 306 | **0.7810** | Highest Dice among the listed configurations; configuration selection means this is not an untouched final validation estimate |
 | External YUN cohort | Dataset600 fold 0, 100 epochs, zero-shot | 98 | **0.8336** | Artifact-reported external evaluation; no YUN fine-tuning |
 | External IEDH subset | Dataset600 fold 0, 100 epochs, zero-shot | 31 | 0.7281 | Median Dice 0.8258; missing late phase handled with a zero-filled washout channel |
 
-The `ds600` checkpoints are the best-supported model family in the recovered local archive, but they are not committed here: each checkpoint is approximately 816 MB and a five-fold set is approximately 4.1 GB. See [MODEL_CARD.md](docs/MODEL_CARD.md) for provenance and release limitations.
+The recovered archive contains `ds600` checkpoints, but they are not committed here. Each checkpoint is approximately 816 MB and a five-fold set is approximately 4.1 GB. See [MODEL_CARD.md](docs/MODEL_CARD.md) for provenance and release details.
 
 ## Repository layout
 
@@ -116,9 +114,9 @@ Tests use synthetic arrays and verify temporal normalization, enhancement channe
 
 ## Data and privacy
 
-This repository intentionally excludes:
+This repository excludes:
 
-- DICOM and NIfTI images, labels, predictions, and patient-level metadata;
+- Raw DICOM and NIfTI volumes, label and prediction files, and patient-level metadata (except for the attributed single-slice figure above);
 - clinical spreadsheets and per-patient JSON files;
 - training checkpoints and optimizer state;
 - private institutional cohorts;

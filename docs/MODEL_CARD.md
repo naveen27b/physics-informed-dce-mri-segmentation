@@ -2,7 +2,7 @@
 
 ## Intended use
 
-Research on multi-phase breast DCE-MRI tumor segmentation, preprocessing robustness, domain shift, and post-processing. The model is not validated for diagnosis, treatment planning, screening, or autonomous clinical use.
+Research use for breast tumor segmentation from multi-phase DCE-MRI and evaluation of preprocessing, domain shift, and post-processing. The model has not been validated for diagnosis, treatment planning, screening, or autonomous clinical use.
 
 ## Architecture
 

@@ -1,10 +1,10 @@
 # Result audit
 
-This file records the recovered evidence behind the public-facing result table. It avoids combining incompatible protocols and distinguishes selected development results from untouched validation.
+This document summarizes the recovered artifacts behind the README results table. It lists evaluation protocols separately and identifies results selected during development.
 
 ## Dataset600 internal cross-validation
 
-The strongest complete five-fold artifact is:
+The available complete five-fold artifact is:
 
 ```text
 nnUNetTrainerResEncM_TopKCE_Parallel__nnUNetResEncUNetPlans__3d_fullres_iso/
@@ -33,7 +33,7 @@ Recovered aggregate analysis contains 306 cases. Selected configurations include
 | Mean ensemble, folds 1+3+4 + proximity PP | 0.78100 | 0.07456 | 0.85322 |
 | Mean ensemble, folds 1+4 | 0.77641 | 0.08160 | 0.84740 |
 
-Because multiple configurations were compared on this cohort, the best row is a selected result and should not be described as untouched independent validation. The manuscript-designated submission configuration reports Dice 0.7773 and ranking score 0.8597.
+Multiple configurations were compared on this cohort, so the 0.7810 result was selected during development and is not an untouched independent validation estimate. The manuscript-designated submission configuration reports Dice 0.7773 and ranking score 0.8597.
 
 ## External cohorts
 
@@ -44,6 +44,6 @@ Recovered Dataset600 reports contain:
 
 These are artifact-reported results. The source cohorts and original compute host were unavailable for an independent rerun during repository reconstruction.
 
-## Claims intentionally not used
+## Unverified claims omitted
 
-The résumé values “78.98% Dice on 306 cases”, “78.84% on 100 YUN cases”, and “82.00% on 31 IEDH cases” could not all be mapped to one consistent recovered protocol. In particular, 82% closely matches the IEDH median rather than its mean. They are therefore omitted from the headline README pending provenance clarification.
+The résumé values “78.98% Dice on 306 cases”, “78.84% on 100 YUN cases”, and “82.00% on 31 IEDH cases” could not be matched to one consistent recovered protocol. The 82% value is close to the IEDH median rather than its mean. These values are omitted from the README until their sources are clarified.

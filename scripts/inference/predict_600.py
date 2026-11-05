@@ -508,10 +508,7 @@ def infer_single(args_ns, predictor, case_id: str,
                 gt_mask = (nib.load(gt_path).get_fdata() > 0.5).astype(np.uint8)
                 gt_vox = int(gt_mask.sum())
                 ds = dice_score(mask_full, gt_mask)
-                quality = ("EXCELLENT" if ds >= 0.8 else
-                           "GOOD"      if ds >= 0.7 else
-                           "FAIR"      if ds >= 0.6 else "POOR")
-                print(f"  Dice      : {ds:.4f}  ({quality})  | "
+                print(f"  Dice      : {ds:.4f}  | "
                       f"GT {gt_vox} vs Pred {mask_full.sum()}")
             else:
                 print(f"  Dice      : skipped (no GT at {gt_path})")

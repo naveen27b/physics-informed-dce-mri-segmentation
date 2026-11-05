@@ -4,7 +4,7 @@ Post-Processing Script for MAMA-MIA Challenge.
 Implements Connected Component Analysis to clean up segmentations.
 
 Strategies:
-1. keep_largest: Keep ONLY the largest connected component. (Best for single tumors).
+1. keep_largest: Keep only the largest connected component. Use when each case is expected to contain one tumor lesion.
 2. remove_small: Keep largest, plus any other components larger than `min_size` voxels.
 3. clinical:
    - If 'multifocal_cancer' == Yes: Keep all components > min_size.

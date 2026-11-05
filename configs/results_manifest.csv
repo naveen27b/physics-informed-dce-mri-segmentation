@@ -2,7 +2,7 @@ protocol,model,cases,dice,notes
 internal_5fold_cv,Dataset600_TopKCE_ResEncM_3d_fullres_iso,1200,0.8012963849934753,Out-of-fold aggregate from nnU-Net summary.json
 internal_5fold_cv,Dataset600_DiceCE_1000ep_ResEncM,1200,0.7940,Mean of five documented fold validation results
 mamamia_heldout,Mean_ensemble_folds_1_3_4,306,0.7801458691064123,Recorded aggregate result
-mamamia_heldout,Mean_ensemble_folds_1_3_4_proximity_pp,306,0.7809986567386455,Selected best recorded Dice configuration
+mamamia_heldout,Mean_ensemble_folds_1_3_4_proximity_pp,306,0.7809986567386455,Selected configuration with highest Dice among those evaluated
 mamamia_heldout,Submission_folds_1_4_proximity_pp,306,0.7773,Manuscript-designated submitted configuration
 external_yun,Dataset600_100ep_fold0_zero_shot,98,0.8336,Artifact-reported external evaluation
 external_iedh,Dataset600_100ep_fold0_zero_shot,31,0.7281,Artifact-reported mean; median 0.8258
