@@ -22,7 +22,9 @@ flowchart LR
     J --> K[Connected-component post-processing]
 ```
 
-![Independent versus joint temporal normalization](assets/normalization_comparison.png)
+![Original DUKE_019 first post-contrast DCE-MRI slice, Dataset600 ensemble tumor prediction overlaid on the image, and predicted mask. The prediction is not the expert reference mask.](assets/segmentation_example_duke019.png)
+
+This is a single-slice illustration from MAMA-MIA case DUKE_019 (slice 84), using the original first post-contrast phase and the recovered `ds600` ensemble prediction. The image component comes from the MAMA-MIA dataset, distributed under CC BY-NC 4.0 at the level of its most restrictive source collection. Cite [Garrucho et al. (MAMA-MIA)](https://doi.org/10.1038/s41597-025-04707-4) and [Saha et al. (Duke-Breast-Cancer-MRI)](https://doi.org/10.7937/TCIA.e3sv-re93). The red region is the model prediction, not the expert reference annotation.
 
 ## Evidence-backed results
 
@@ -89,7 +91,7 @@ python scripts/data/create_dataset_600.py \
 
 This project used MAMA-MIA. See the [MAMA-MIA project and challenge website](https://www.ub.edu/mama-mia/) and the [official dataset download instructions](https://github.com/LidiaGarrucho/MAMA-MIA#downloading-the-dataset) for access through Synapse or XNAT. The dataset is hosted on [Synapse (syn60868042)](https://www.synapse.org/Synapse:syn60868042).
 
-Please cite Garrucho et al., [MAMA-MIA: A large-scale breast cancer MRI dataset](https://doi.org/10.1038/s41597-025-04707-4), *Scientific Data* (2025), and credit the MAMA-MIA dataset when using this work. Data access, permitted use, and redistribution follow the providers' terms and source-collection requirements. This repository contains no source images or labels and does not redistribute the dataset.
+Please cite Garrucho et al., [MAMA-MIA: A large-scale breast cancer MRI dataset](https://doi.org/10.1038/s41597-025-04707-4), *Scientific Data* (2025), and credit the MAMA-MIA dataset when using this work. Data access, permitted use, and redistribution follow the providers' terms and source-collection requirements. This repository does not redistribute raw MRI volumes or label files; it includes only the attributed single-slice visualization described above.
 
 ## Inference
 

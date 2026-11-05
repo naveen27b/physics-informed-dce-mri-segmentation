@@ -1,6 +1,8 @@
 # Data preparation
 
-No medical images are distributed in this repository.
+No raw medical-image volumes or label files are distributed in this repository. The README includes one attributed, single-slice visualization derived from MAMA-MIA case DUKE_019 to show the original DCE-MRI input alongside a Dataset600 prediction. The red mask is the model prediction, not the expert reference label.
+
+MAMA-MIA is distributed under CC BY-NC 4.0 at the level of its most restrictive source collection. The figure's input slice is from the DUKE collection. Cite [Garrucho et al. (MAMA-MIA)](https://doi.org/10.1038/s41597-025-04707-4) and [Saha et al. (Duke-Breast-Cancer-MRI)](https://doi.org/10.7937/TCIA.e3sv-re93), indicate that the displayed image is a single-slice derivative with a model prediction overlay, and follow the [MAMA-MIA access and reuse terms](https://github.com/LidiaGarrucho/MAMA-MIA) and [TCIA data usage policy](https://www.cancerimagingarchive.net/data-usage-policies-and-restrictions/).
 
 The dataset builder expects one folder per case containing registered NIfTI phases. The pre-contrast phase must use the nnU-Net `_0000.nii.gz` suffix; remaining files are interpreted in sorted order as post-contrast phases.
 

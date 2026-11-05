@@ -22,7 +22,7 @@ Research on multi-phase breast DCE-MRI tumor segmentation, preprocessing robustn
 
 ## Training data
 
-The recovered experiment used 1,200 MAMA-MIA training cases across DUKE, I-SPY1, I-SPY2, and NACT. MAMA-MIA is a multi-institutional dataset; this repository contains no source images or labels.
+The recovered experiment used 1,200 MAMA-MIA training cases across DUKE, I-SPY1, I-SPY2, and NACT. MAMA-MIA is a multi-institutional dataset. The repository does not redistribute raw MRI volumes or label files; it includes one attributed, single-slice visualization from DUKE_019 in the README.
 
 - Project and challenge information: [MAMA-MIA website](https://www.ub.edu/mama-mia/).
 - Dataset access: follow the [official MAMA-MIA download instructions](https://github.com/LidiaGarrucho/MAMA-MIA#downloading-the-dataset) for Synapse and XNAT access. The dataset is hosted on [Synapse (syn60868042)](https://www.synapse.org/Synapse:syn60868042).
